@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const BASE_URL = "https://ih-crud-api.herokuapp.com";
 
@@ -32,7 +33,9 @@ function HomePage() {
           <div key={i} className="box">
             <p>Name: {character.name}</p>
             <p>Occupation: {character.occupation}</p>
-            <p>Weapon: {character.weapon}</p>
+            <Link to={`/characters/${character.id}`}>
+              <button>More Details</button>
+            </Link>
           </div>
         );
       })}
